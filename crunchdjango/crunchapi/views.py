@@ -14,6 +14,7 @@ from django.conf import settings
 from utils.task_utils import launch_task
 from utils.aws_utils import add_recommendation_data,get_recommendation_goods
 from . import serializers
+import time
 
 logger = logging.getLogger(__name__)
 
@@ -291,3 +292,8 @@ class AddUserView(views.APIView):
         data = {}
         data['result'] = 'success'
         return Response(data, status=status.HTTP_201_CREATED)
+
+class AirflowTestView(views.APIView):
+    def get(self, request):
+        time.sleep(5)
+        return Response('hello airflow')

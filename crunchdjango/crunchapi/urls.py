@@ -17,7 +17,7 @@ urlpatterns = [
     path('get_recommendation_data/<slug:user_id>/<slug:item_id>/', views.GetRecommendGoodsView.as_view(),name='get_recommendation_data' ),
     path('get_recommendation_data/<slug:user_id>/', views.GetRecommendGoodsView.as_view(),name='get_recommendation_data' ),
 
-    
+    path('airflow_test', views.AirflowTestView.as_view(), name='airflow_test'),
 ]
 
 
