@@ -292,8 +292,3 @@ class AddUserView(views.APIView):
         data = {}
         data['result'] = 'success'
         return Response(data, status=status.HTTP_201_CREATED)
-
-class AirflowTestView(views.APIView):
-    def get(self, request):
-        time.sleep(5)
-        return Response('hello airflow')
