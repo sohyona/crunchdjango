@@ -59,7 +59,7 @@ services:
     depends_on:
       - postgres
     env_file:
-      - ./envfiles/.airflow_development.env
+      - ./envfiles/.secret.env
     volumes:
       - ./airflow/dags:/usr/local/airflow/dags
       - ./airflow/requirements.txt:/requirements.txt

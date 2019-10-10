@@ -14,6 +14,7 @@ from django.conf import settings
 from utils.task_utils import launch_task
 from utils.aws_utils import add_recommendation_data,get_recommendation_goods
 from . import serializers
+import time
 
 logger = logging.getLogger(__name__)
 
