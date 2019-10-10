@@ -129,6 +129,7 @@ def make_new_solution_version(**kwargs):
     response = personalize.create_solution_version(
         solutionArn = 'arn:aws:personalize:us-east-1:051972272913:solution/crunch-solution'
     )
+    logging.info('Response: ' + str(response))
 
     description = personalize.describe_solution_version(
         solutionVersionArn = response['solutionVersionArn']
@@ -136,7 +137,6 @@ def make_new_solution_version(**kwargs):
 
     status = description["solutionVersion"]["status"]
     logging.info('Progress: ' + str(description['solutionVersion']['status']))
-
     
     while description["solutionVersion"]["status"] != 'ACTIVE':
         time.sleep(300)
